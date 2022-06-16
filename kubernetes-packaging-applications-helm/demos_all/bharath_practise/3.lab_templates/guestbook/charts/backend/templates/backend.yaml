@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: backend 
+      app: {{ .Release.Name }}-{{ .Chart.Name }}
   template:
     metadata:
       labels:
-        app: backend
+        app: {{ .Release.Name }}-{{ .Chart.Name }}
     spec:
       containers:
-      - image: phico/backend:2.0
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
-        name: backend
+        name: {{ .Release.Name }}-{{ .Chart.Name }}
         ports:
-        - name: backend
+        - name: http
           containerPort: 3000
         env:
         - name: MONGODB_URI
           valueFrom:
             secretKeyRef:
-              name: backend-secret
+              name: {{ .Release.Name }}-{{ .Chart.Name }}-secret
               key: mongodb-uri
