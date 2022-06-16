@@ -1,10 +1,3 @@
-# whatishelm
-learn helm charts
-
-
-### helm3 stores all manifests as secrets one way to decode and see is as below.
-
-```
 Bahrathkumarajus-MacBook-Pro:2.lab bahrathkumaraju$ kubectl get secrets sh.helm.release.v1.demo-guestbook.v4  -o jsonpath="{ .data.release }" | base64 -d | base64 -d | gunzip | json_pp
 {
    "chart" : {
@@ -35,4 +28,3 @@ Bahrathkumarajus-MacBook-Pro:2.lab bahrathkumaraju$ kubectl get secrets sh.helm.
    "version" : 4
 }
 Bahrathkumarajus-MacBook-Pro:2.lab bahrathkumaraju$
-```
