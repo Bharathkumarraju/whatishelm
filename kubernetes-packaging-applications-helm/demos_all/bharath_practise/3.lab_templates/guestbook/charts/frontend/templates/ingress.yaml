@@ -8,6 +8,9 @@ spec:
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: {{ .Release.Name }}-{{ .Chart.Name }}
-          servicePort: 80
+          service:
+            name: {{ .Release.Name }}-{{ .Chart.Name }}
+            port: 
+              number: 80

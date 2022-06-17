@@ -36,3 +36,16 @@ Bahrathkumarajus-MacBook-Pro:2.lab bahrathkumaraju$ kubectl get secrets sh.helm.
 }
 Bahrathkumarajus-MacBook-Pro:2.lab bahrathkumaraju$
 ```
+
+
+## api-resources and api-versions
+
+```
+bharathdasaraju@MacBook-Pro 1.Core_Concepts (master) $ kubectl api-resources | grep -i replica
+replicationcontrollers            rc                                          true         ReplicationController
+replicasets                       rs           apps                           true         ReplicaSet
+bharathdasaraju@MacBook-Pro 1.Core_Concepts (master) $ kubectl api-versions | grep -i apps
+apps/v1
+bharathdasaraju@MacBook-Pro 1.Core_Concepts (master) $ 
+
+```

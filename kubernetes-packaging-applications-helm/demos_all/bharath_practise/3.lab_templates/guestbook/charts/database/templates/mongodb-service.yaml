@@ -11,4 +11,4 @@ spec:
       targetPort: 27017
   selector:
     app: {{ .Release.Name }}-{{ .Chart.Name }}
-  type: {{ .Values.service.type }}
+#  type: {{ .Values.service.type }}
