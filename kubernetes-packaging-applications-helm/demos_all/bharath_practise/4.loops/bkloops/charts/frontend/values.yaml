@@ -1,0 +1,14 @@
+ingress:
+  hosts:
+    - hostname: forntend.local 
+      paths: 
+        - path: "/public"
+          service: "frotend"
+        - path: "/admin"
+          service: "admin"
+    - hostname: backend.local 
+      paths:
+        - path: "/db"
+          service: "backend-db"
+        - path: "/cache"
+          service: "redis-cache"
