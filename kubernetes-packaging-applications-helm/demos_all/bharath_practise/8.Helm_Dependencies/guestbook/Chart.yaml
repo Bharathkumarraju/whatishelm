@@ -8,12 +8,20 @@ dependencies:
   - name: backend
     version: ~0.1.0
     repository: http://localhost:8080
+#    condition: backend.enabled
+    tags:
+      - api
   - name: frontend 
-    version: ~1.1.0
+    version: ^1.1.0
     repository: http://localhost:8080
   - name: database
     version: ~0.1.0
     repository: http://localhost:8080
+#    condition: database.enabled
+    tags: 
+      - api 
+
+
 
 
 

@@ -5,11 +5,13 @@ backend:
       password: password
   ingress:
     enabled: false
-
 frontend:
   ingress:
-    enabled: false
-
+    enabled: true 
+databse:
+  enabled: true
+tags:
+  api: true 
 ingress:
   hosts:
     - host:

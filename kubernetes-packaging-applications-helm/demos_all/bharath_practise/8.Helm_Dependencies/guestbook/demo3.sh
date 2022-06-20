@@ -244,3 +244,52 @@ spec:
 bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies %
 
 
+helm dependency build guestbook 
+
+
+
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % helm install dev guestbook --set backend.enabled=false --set database.enabled=false
+NAME: dev
+LAST DEPLOYED: Mon Jun 20 08:05:00 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Congratulations ! You installed guestbook chart sucessfully.
+Release name is dev
+
+You can access the Guestbook application at the following urls :
+  http://dev.frontend.minikube.local
+  http://dev.backend.minikube.local
+Have fun !
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % kubectl get pods                                                                   
+NAME                            READY   STATUS              RESTARTS   AGE
+dev-frontend-7dfff6cb7b-5xgcb   0/1     ContainerCreating   0          4s
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+dev-frontend-7dfff6cb7b-5xgcb   1/1     Running   0          7s
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % 
+
+
+
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % helm install dev guestbook --set tags.api=false
+NAME: dev
+LAST DEPLOYED: Mon Jun 20 08:09:13 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Congratulations ! You installed guestbook chart sucessfully.
+Release name is dev
+
+You can access the Guestbook application at the following urls :
+  http://dev.frontend.minikube.local
+  http://dev.backend.minikube.local
+Have fun !
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+dev-frontend-7dfff6cb7b-jbsjl   1/1     Running   0          7s
+bahrathkumaraju@Bahrathkumarajus-MacBook-Pro 8.Helm_Dependencies % 
+
