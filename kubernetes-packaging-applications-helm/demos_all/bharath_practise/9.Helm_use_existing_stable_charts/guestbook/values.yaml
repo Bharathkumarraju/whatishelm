@@ -1,17 +1,28 @@
 backend:
+  enabled: true
   secret:
     mongodb_uri:
-      username: admin
+      username: root
       password: password
+      dbchart: mongodb
+      dbconn: "guestbook?authSource=admin&replicaSet=rs0"
   ingress:
     enabled: false
 frontend:
   ingress:
-    enabled: true 
-databse:
-  enabled: true
+    enabled: false
+
+mongodb:
+  replicaSet:
+    enabled: true
+    key: password
+  mongodbRootPassword: password
+  persistence:
+    size: 100Mi
+
 tags:
-  api: true 
+  api: true
+
 ingress:
   hosts:
     - host:
@@ -19,8 +30,5 @@ ingress:
         chart: frontend
     - host:
         domain: backend.minikube.local
-        chart: backend 
-  
-  
-    
-    
+        chart: backend
+

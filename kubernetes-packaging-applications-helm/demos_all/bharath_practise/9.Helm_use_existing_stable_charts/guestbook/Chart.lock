@@ -5,8 +5,8 @@ dependencies:
 - name: frontend
   repository: http://localhost:8080
   version: 1.1.0
-- name: database
-  repository: http://localhost:8080
-  version: 0.1.0
-digest: sha256:9a46f71f69cba43778dbe62c57fa0298756fe8c46329c45b6046a964db9de6a2
-generated: "2022-06-20T07:38:06.878777+08:00"
+- name: mongodb
+  repository: https://charts.bitnami.com/bitnami
+  version: 12.1.20
+digest: sha256:602f0b54e2fa8ad063bad93a2b484f15aa1785fd1f64462b58e49f21da631a29
+generated: "2022-06-20T08:45:04.863949+08:00"
